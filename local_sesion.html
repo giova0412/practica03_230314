@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Session</title>
+  </head>
+  <body>
+    <h1>Practica 02: Manejo de sesiones locales de navegador</h1>
+    <p>Objetivo: Identificar la metodología de construcción de sesión y de datos generados en el funcionamiento del navegador web, implementando un contador incremental que reaccionara.</p>
+    
+    <p id="iterator">0</p>
+    <h2>Haz click en el botón para incrementar el valor de la variable.</h2>
+    
+    <button onclick="sumar();" type="button">+1</button>
+    
+    <p>Después de colaborar el funcionamiento del botón, ver lo que sucede cuando: 1- recargas la página, 2- cuando cierras el navegador.</p>
+    
+    <script>
+      function sumar() {
+        if (sessionStorage.onClickcount) {
+          sessionStorage.onClickcount = Number(sessionStorage.onClickcount) + 1;
+        } else {
+          sessionStorage.onClickcount = 1;
+        }
+        document.getElementById("iterator").innerHTML = sessionStorage.onClickcount;
+      }
+    </script>
+  </body>
+</html>
